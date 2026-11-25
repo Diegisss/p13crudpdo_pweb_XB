@@ -9,6 +9,20 @@
     <?php
         $id = (int)filter_input(INPUT_POST, 'fID');
         include_once('conexion.php');
+
+        try{
+            $database = new Connection();
+            $db = $database->openConnection();
+            $stm = $db->prepare("DELETE FROM contacto where id = ?");
+            $stm->execute([$id]);
+            if($stm->rowCount() > 0){
+                echo "Se elimino el registro exitosamente";
+            }else{
+                echo "No se encontro el registro con id: " . $id;
+            }
+        }catch(PDOException $e){
+            echo "Problema con la conexión: " . $e->getMessage();
+        }
     ?>
 </body>
 </html>
