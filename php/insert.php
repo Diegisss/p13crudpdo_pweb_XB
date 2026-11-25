@@ -7,10 +7,21 @@
 </head>
 <body>
     <?php
+        
         $nombre = filter_input(INPUT_POST, 'fNombre');
         $alias = filter_input(INPUT_POST, 'fAlias');
         $edad = (int)(filter_input(INPUT_POST, 'fEdad'));
-        $sql = "INSERT INTO contacto(nombre, alias, edad)" . "VALUES ('".$nombre."','".$alias."','".$edad."');";
+        include_once('conexion.php');
+
+        try{
+            $stm = $db->prepare("INSERT INTO contacto(nombre, alias, edad) VALUES (?,?,?)");
+            $stm->execute([$nombre, $alias, $edad]);
+
+        }catch(PDOException $e){
+            echo "Problema de conexión: " .$e->getMessage();
+        }
+
+        $resultado = $dp->query($sql);
     ?>
 </body>
 </html>
