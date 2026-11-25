@@ -14,14 +14,15 @@
         include_once('conexion.php');
 
         try{
+            echo "<h2>Altas</h2>";
+            $database = new Connection();
+            $db = $database->openConnection();
             $stm = $db->prepare("INSERT INTO contacto(nombre, alias, edad) VALUES (?,?,?)");
             $stm->execute([$nombre, $alias, $edad]);
 
         }catch(PDOException $e){
             echo "Problema de conexión: " .$e->getMessage();
         }
-
-        $resultado = $dp->query($sql);
     ?>
 </body>
 </html>
