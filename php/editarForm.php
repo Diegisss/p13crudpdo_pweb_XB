@@ -15,7 +15,7 @@
     $database = new Connection();
     $db = $database->openConnection();
 
-    $stm = $db->prepare("SELECT * FROM contacto WHERE id = ?");
+    $stm = $db->prepare("SELECT * FROM contacto WHERE id = ?;");
     $stm->execute([$id]);
     $contacto = $stm->fetch(PDO::FETCH_ASSOC);
 
