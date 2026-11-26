@@ -8,7 +8,7 @@
 <body>
     <?php
         echo "<h2>Consultar contactos</h2>";
-        include_once('conexion.php');
+        include_once 'conexion.php';
         try{
             $database = new Connection();
             $db = $database->openConnection();
