@@ -22,9 +22,6 @@
         }catch(PDOException $e){
             echo "Problema con la conexión: " . $e->getMessage();
         }
-
-
-
     ?>
 </body>
 </html>
