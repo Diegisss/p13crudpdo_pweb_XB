@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        echo "<h2>Consultar bd</h2>";
+        echo "<h2>Consultar contactos</h2>";
         include_once('conexion.php');
         try{
             $database = new Connection();
