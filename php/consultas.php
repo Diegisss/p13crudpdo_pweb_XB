@@ -12,8 +12,8 @@
         try{
             $database = new Connection();
             $db = $database->openConnection();
-            $stm = "SELECT * FROM contacto";
-            foreach ($db->query($stm) as $row){
+            $sql = "SELECT * FROM contacto";
+            foreach ($db->query($sql) as $row){
                 echo "Id: ".$row['id']. "<br>";
                 echo "Nombre: ".$row['nombre']."<br>";
                 echo "Alias: ".$row['alias']."<br>";
