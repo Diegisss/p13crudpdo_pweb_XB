@@ -26,7 +26,7 @@
     ?>
     <h2>Actualizar contacto</h2>
     <form action="actualizacion.php" method="post">
-        <input type="hidden" name="fID" value="<?php echo $contacto['nombre']; ?>">
+        <input type="hidden" name="fID" value="<?php echo $contacto['id']; ?>">
         <label>Nombre:</label>
         <input type="text" name="fNombre" value="<?php echo $contacto['nombre']; ?>"><br>
 
