@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario para actualizar los contactos</title>
 </head>
 
 <body>
@@ -24,6 +24,7 @@
         exit;
     }
     ?>
+    <h2>Actualizar contacto</h2>
     <form action="actualizacion.php" method="post">
         <input type="hidden" name="fID" value="<?php echo $contacto['nombre']; ?>">
         <label>Nombre:</label>
