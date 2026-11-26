@@ -18,7 +18,7 @@
             $database = new Connection();
             $db = $database->openConnection();
 
-            $stm = $db->prepare("UPDATE contacto SET nombre = ? , alias = ? , edad = ? WHERE id = ?");
+            $stm = $db->prepare("UPDATE contacto SET nombre = ? , alias = ? , edad = ? WHERE id = ?;");
             $stm->execute([$nombre, $alias, $edad, $id]);
             echo "Actualizado con exito";
         }catch(PDOException $e){
