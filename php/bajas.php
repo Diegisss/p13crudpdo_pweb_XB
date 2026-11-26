@@ -11,6 +11,7 @@
         include_once('conexion.php');
 
         try{
+            echo "<h2>Bajas</h2>";
             $database = new Connection();
             $db = $database->openConnection();
             $stm = $db->prepare("DELETE FROM contacto where id = ?");
